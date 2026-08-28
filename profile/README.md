@@ -60,6 +60,27 @@ shows what actually cost you the fight — deaths, missed cooldowns, consumables
 
 </td>
 </tr>
+<tr>
+<td colspan="2" align="center" valign="top">
+
+<img src="https://raw.githubusercontent.com/EbonHold-Labs/.github/main/profile/putricide.png" width="90" alt="">
+
+<h3>Professor Putricide</h3>
+
+<b>Ask the alchemist.</b> He runs the lab inside NAG Helper — ask him what a
+screen does, what a number means, or why the pull went the way it did, and he
+answers in under 120 words, in whatever language you asked in.
+
+<sub>An EbonHold Labs project · lives in NAG Helper</sub>
+
+<br><br>
+
+<a href="https://nextaction.guide/download/windows">⬇️ Get NAG Helper</a> &nbsp;·&nbsp;
+<a href="https://discord.gg/EbonHold">🎮 Discord</a> &nbsp;·&nbsp;
+<a href="https://github.com/EbonHold-Labs/NAG-issues/discussions/categories/q-a">❓ Ask a question</a>
+
+</td>
+</tr>
 </table>
 
 <div align="center">
