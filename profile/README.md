@@ -39,7 +39,7 @@ now — across every flavor from Vanilla through Mists.
 </td>
 <td width="50%" align="center" valign="top">
 
-<img src="https://raw.githubusercontent.com/EbonHold-Labs/.github/main/profile/nag-logo.png" width="90" alt="">
+<img src="https://raw.githubusercontent.com/EbonHold-Labs/.github/main/profile/nag-helper-logo.png" width="120" alt="">
 
 <h3>NAG Helper</h3>
 
