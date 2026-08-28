@@ -33,7 +33,8 @@ now — across every flavor from Vanilla through Mists.
 <br><br>
 
 <a href="https://github.com/EbonHold-Labs/NAG-pub/releases/latest">⬇️ Download</a> &nbsp;·&nbsp;
-<a href="https://github.com/EbonHold-Labs/NAG-issues/issues">🐛 Report a bug</a> &nbsp;·&nbsp;
+<a href="https://github.com/EbonHold-Labs/NAG-issues/issues">🐛 Report a bug</a><br>
+<a href="https://github.com/EbonHold-Labs/NAG-issues/discussions/categories/q-a">❓ Ask a question</a> &nbsp;·&nbsp;
 <a href="https://nextaction.guide">🌐 nextaction.guide</a>
 
 </td>
@@ -53,7 +54,9 @@ shows what actually cost you the fight — deaths, missed cooldowns, consumables
 
 <a href="https://nextaction.guide/download/windows">⬇️ Windows</a> &nbsp;·&nbsp;
 <a href="https://nextaction.guide/download/mac">🍎 macOS</a> &nbsp;·&nbsp;
-<a href="https://nextaction.guide/download/linux">🐧 Linux</a>
+<a href="https://nextaction.guide/download/linux">🐧 Linux</a><br>
+<a href="https://github.com/EbonHold-Labs/NAG-issues/discussions/categories/q-a">❓ Ask a question</a> &nbsp;·&nbsp;
+<a href="https://github.com/EbonHold-Labs/NAG-issues/issues">🐛 Report a bug</a>
 
 </td>
 </tr>
@@ -61,6 +64,6 @@ shows what actually cost you the fight — deaths, missed cooldowns, consumables
 
 <div align="center">
 
-[💬 Discussions](https://github.com/orgs/EbonHold-Labs/discussions)
+[💬 Discussions](https://github.com/orgs/EbonHold-Labs/discussions) &nbsp;·&nbsp; [🎮 Discord](https://discord.gg/EbonHold)
 
 </div>
