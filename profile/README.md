@@ -2,102 +2,87 @@
 
 # ⚗️ EbonHold Labs
 
-<img src="https://img.shields.io/badge/site-nextaction.guide-3fbf4a?style=flat-square" alt=""> <img src="https://img.shields.io/badge/discord-the_EbonHold-6a5acd?style=flat-square" alt=""> <img src="https://img.shields.io/badge/store-nag.tebex.io-8fce00?style=flat-square" alt=""> <img src="https://img.shields.io/badge/experiments-ongoing-76b041?style=flat-square" alt="">
+<img src="https://img.shields.io/badge/site-nextaction.guide-3fbf4a?style=flat-square" alt=""> <img src="https://img.shields.io/badge/discord-the_EbonHold-6a5acd?style=flat-square" alt=""> <img src="https://img.shields.io/badge/store-nag.tebex.io-8fce00?style=flat-square" alt="">
 
-**The laboratory.** Not the product — the apparatus that runs the people and agents who brew it.
+**We make [NextActionGuide](https://nextaction.guide)** — a World of Warcraft addon that
+tells you what to press next, on every flavor from Vanilla to Mists.
 
 *"Good news, everyone! The slime is flowing again!"*
 
----
-
-### Principals
-
-**[@Rakizi](https://github.com/Rakizi)** &nbsp;·&nbsp; **[@Fonsas](https://github.com/afonsohfontes)**
-
-*Co-owners in business terms. Collaborators in git terms.*
-*Two things that used to get conflated here — they don't any more.*
-*One holds the tablet, one holds the tentacle. The oozes are shared.*
+**[@Rakizi](https://github.com/Rakizi)** &nbsp;·&nbsp; **[@afonsohfontes](https://github.com/afonsohfontes)** &nbsp;·&nbsp; **[@Smufrik](https://github.com/Smufrik)**
 
 </div>
 
 ---
 
-## Where we live
+## How it actually works
 
-| surface | address |
-|---|---|
-| 🌐 Site | [nextaction.guide](https://nextaction.guide) |
-| 💬 Discord — **the EbonHold** | [discord.gg/ebonhold](https://discord.gg/ebonhold) |
-| 🛒 Store | [nag.tebex.io](https://nag.tebex.io) |
-| 🧡 Patreon | *(handle not recorded anywhere in the estate — fill in)* |
-| 🐛 Player issues | [Rakizi/NAG-issues](https://github.com/Rakizi/NAG-issues) |
-| ⚙️ Helper edge | naghelper.duckdns.org |
-
----
-
-## What this cauldron holds
-
-The company, written down: who sits where, what each seat may touch, what was decided
-and why, and the rules that survived contact with being wrong.
+The addon doesn't decide what to recommend. It *reads* what to recommend, from
+tables generated out of real game data — so a rotation change is a data change,
+not a code change.
 
 ```mermaid
-flowchart TB
-  subgraph HOUSE["🏚️ the residence — where a human lives"]
-    H["principal<br/><i>owns · never seen in the office</i>"]
-    AV["avatar<br/><i>acts · is seen · does business</i>"]
-    H -.is present as.-> AV
+flowchart LR
+  subgraph SRC["📚 reference data"]
+    DBC["game DBC dumps<br/><i>spells · items · effects</i>"]
+    SIM["sim projects<br/><i>vendored, read-only</i>"]
   end
 
-  subgraph OFFICE["⚗️ the laboratory — where work bubbles"]
-    direction LR
-    D["desks<br/><i>a role</i>"]
-    L["lanes<br/><i>a scope</i>"]
-    S["seats<br/><i>current staffing</i>"]
-    D -->|sits at| L
-    S -->|occupies| D
+  subgraph GEN["🐍 NextActionGuide-Tools"]
+    G["generators<br/><i>python</i>"]
+    V["gates<br/><i>every table checked<br/>before it ships</i>"]
+    G --> V
   end
 
-  subgraph RECORD["📜 the lab notebook — what outlives every experiment"]
-    R["rulings<br/><i>verbatim, never paraphrased</i>"]
-    B["the board<br/><i>open decisions</i>"]
-    A["audits<br/><i>checked against sources</i>"]
+  subgraph ADDON["🎮 NextActionGuide"]
+    T["generated tables<br/><i>lua</i>"]
+    E["the engine<br/><i>reads a rotation,<br/>picks the next action</i>"]
+    T --> E
   end
 
-  AV ==>|enters a desk,<br/>inherits its scope| D
-  OFFICE --> RECORD
+  P(["🧙 you, mid-pull"])
 
-  classDef house fill:#1a2e12,stroke:#76b041,color:#d8f0c0
-  classDef office fill:#0f2b1a,stroke:#3fbf4a,color:#c8f2d0
-  classDef rec fill:#241a2e,stroke:#8a5acd,color:#e0d0f2
-  class H,AV house
-  class D,L,S office
-  class R,B,A rec
+  DBC --> G
+  SIM --> G
+  V ==>|generated lua| T
+  E ==>|next action| P
+
+  classDef src fill:#241a2e,stroke:#8a5acd,color:#e0d0f2
+  classDef gen fill:#0f2b1a,stroke:#3fbf4a,color:#c8f2d0
+  classDef add fill:#1a2e12,stroke:#76b041,color:#d8f0c0
+  classDef ply fill:#2e2410,stroke:#cd9a5a,color:#f2e4c0
+  class DBC,SIM src
+  class G,V gen
+  class T,E add
+  class P ply
 ```
 
-**A desk is a role. A lane is a scope. A seat is who's in the chair right now.**
-Move a desk to another lane and its scope changes with it — authority is inherited from
-where you sit, never carried in.
+⭐ **Everything downstream of a generator is disposable.** If a table is wrong we fix
+the generator and regenerate — we don't hand-patch the output. That one rule is why
+seven game flavors stay in step instead of drifting apart.
 
 ---
 
-## 🧪 Rules that survived the explosion that created them
+## The repos
 
-Each exists because an experiment blew up first. None of them is theory — every one has a scorch mark.
-
-| rule | what it prevents |
+| repo | what it is |
 |---|---|
-| **Three exit states, never two** | *could not look* silently reading as *found nothing* |
-| **Pair every zero with a positive control** | a pattern that structurally cannot match, reported as an absence |
-| **Ship a mutation control or you shipped nothing** | a dead check printing a confident green |
-| **A tool may not guess** | *"an empty sack refilled with garbage each time"* |
-| **Never pick a canonical side** | a seam degrading into a validator |
-| **Quote the principal; do not improve them** | settled decisions reopened on a sharpened paraphrase |
-| **Authority is session-scoped and never remembered** | a past grant read at startup as a live one |
+| **NextActionGuide** | the addon — Lua, ships to players |
+| **NextActionGuide-Tools** | the generators, the services, the gates — Python |
+| **extern-deps** | a manifest of the sim projects we read from. Vendored, never patched |
+| **NAG-pub** | the public-facing slice |
+
+## Where to find us
+
+| | |
+|---|---|
+| 🌐 Site | [nextaction.guide](https://nextaction.guide) |
+| 💬 Discord | [discord.gg/ebonhold](https://discord.gg/ebonhold) |
+| 🛒 Store | [nag.tebex.io](https://nag.tebex.io) |
+| 🐛 Found a bug? | [Rakizi/NAG-issues](https://github.com/Rakizi/NAG-issues) |
 
 ---
 
-
----
-
-*This is the EbonHold Labs org profile. The office's own repo — agents, skills,
-hooks, rulings, audits — lives in `the-house`. The addon lives in `NextActionGuide`.*
+<div align="center">
+<i>Three people, a pile of spell data, and a rule that a check which cannot fail isn't a check.</i>
+</div>
